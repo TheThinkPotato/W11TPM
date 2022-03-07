@@ -2,6 +2,12 @@
 
 CALL :Title
 
+set argC=0
+for %%x in (%*) do Set /A argC+=1
+
+if %argC% == 0 GOTO help
+
+
 IF /i %1% == HELP GOTO help
 
 IF /i %1% == NEW GOTO add
@@ -17,7 +23,7 @@ echo This tool will add or remove the needed regestry key for windows 11 tpm che
 echo By running this tool during an install of windows 11 or in window 10 before an upgrade will enable you to add or 
 echo remove the TPM bypass check on the Windows 11 install.
 echo.
-echo To add or remove a TPM bypass key you must be running as an administrator
+echo To add or remove a TPM bypass keys you must be running as an administrator.
 echo.
 echo ========================================================================================================
 echo W11TPM NEW       -creates TPM bypess regestry key
